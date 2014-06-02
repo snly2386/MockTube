@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'hirb'
 gem 'pry-debugger'
 gem 'rspec-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
