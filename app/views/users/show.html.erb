@@ -2,3 +2,18 @@
 
 <h2> CREATE A VIDEO!! </h2>
 
+
+<div>
+  <%= form_tag "users/#{@user_id}/videos", :method => "post" do %>
+    <%=label_tag :title, nil %>
+    <%=text_field_tag :title %>
+
+    <%=label_tag :description, nil %>
+    <%=text_field_tag :description %>
+
+    <%=label_tag :youtube_id, nil %>
+    <%=text_field_tag :youtube_id %>
+
+    <%=submit_tag "Create Video" %>
+  <%end%>
+</div>
