@@ -1,0 +1,30 @@
+<h1> WELCOME TO THE LANDING PAGE! </h1> 
+
+<h2> SIGN IN HERE </h2>
+<div>
+  <%= form_tag 'users/signin', :method => "post" do %>
+    <%=label_tag :username, nil %>
+    <%=text_field_tag :password %>
+
+    <%=label_tag :password, nil %>
+    <%=password_field_tag :password %>
+
+    <%=submit_tag "SIGN IN" %>
+  <%end%>
+</div>
+<h2> DONT HAVE AN ACCOUNT? SIGN UP HERE </h2>
+
+<%= form_tag '/users', :method => "post"  do%>
+  <%=label_tag :username, nil %>
+  <%=text_field_tag :username%>
+
+  <%= label_tag :name, nil %>
+  <%= text_field_tag :name %>
+
+  <%= label_tag :email, nil %>
+  <%= text_field_tag :email %>
+
+  <%= label_tag :password, nil %>
+  <%= password_field_tag :password,nil %>
+  <%= submit_tag "Create my account" %>
+<%end%>
