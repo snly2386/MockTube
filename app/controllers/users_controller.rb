@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.find_by_username(params[:username])
     if params[:password] != @user.password
       flash[:error] = "Incorrect Password"
-      render '/'
+      redirect_to '/'
     else 
       redirect_to "/users/#{@user.id}"
     end
@@ -17,4 +17,5 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
+
 end

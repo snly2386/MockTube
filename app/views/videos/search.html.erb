@@ -1,0 +1,7 @@
+<h1> Search Results </h1>
+
+<ul> 
+  <%@videos.each do |video|  %>
+  <li><%=link_to(video.title, "/videos/#{video.id}") %></li>
+  <%end%>
+</ul>

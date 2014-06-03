@@ -11,9 +11,13 @@
     <%=label_tag :description, nil %>
     <%=text_field_tag :description %>
 
-    <%=label_tag :youtube_id, nil %>
+    <%=label_tag :youtube_id, "Youtube ID" %>
     <%=text_field_tag :youtube_id %>
 
     <%=submit_tag "Create Video" %>
   <%end%>
+</div>
+
+<div>
+  <%=link_to("Show All My Videos", "/users/#{@user.id}/videos")%>
 </div>
