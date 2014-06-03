@@ -2,6 +2,7 @@
 
 <ul> 
   <%@videos.each do |video|  %>
+  <div><%=image_tag(video.thumbnail)%></div>
   <li><%=link_to(video.title, "/videos/#{video.id}") %></li>
   <%end%>
 </ul>

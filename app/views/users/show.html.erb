@@ -4,7 +4,7 @@
 
 
 <div>
-  <%= form_tag "users/#{@user_id}/videos", :method => "post" do %>
+  <%= form_tag "/users/#{@user.id}/videos", :method => "post" do %>
     <%=label_tag :title, nil %>
     <%=text_field_tag :title %>
 
