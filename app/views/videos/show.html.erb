@@ -9,13 +9,17 @@
 <% if flash[:success_comment] %>
   <div><%=flash[:success_comment]%>
     <% end %>
-<%= form_tag "/videos/#{@video.id}/comments", :method => "post" do %>
+<%= form_tag("/users/#{params[:user_id]}/videos/#{@video.id}/comments", :method => "post") do %>
     <%=label_tag :comment, nil %>
-    <%=text_area_tag :content %>
+    <%=text_area_tag :content, nil, class: "commentinput" %>
     <%=submit_tag "Comment"%>
     <% end %>
 
-
-    <% @video.comments.each do |comment| %>
-    <p> <%= comment.content %> </p>
+    <div class="comments"> 
+    <% @video.comments.each_with_index do |comment, i| %>
+    <h1> <%= @user_names[i] %> </h1>
+    <p>  <%= comment.content %> </p>
     <% end %>
+    </div>
+
+   

@@ -11,10 +11,20 @@ class VideosController < ApplicationController
 
   def search
     @videos = Video.search(params[:search])
+    @user_id = params[:id]
   end
 
   def show
     @video = Video.find(params[:id])
+    @comments = @video.comments
+    @user_ids = []
+    @user_names = []
+    @comments.each do |comment| 
+      @user_ids.push(comment.user_id)
+    end
+    @user_ids.each do |user_id|
+      @user_names.push(User.find(user_id).username)
+    end
   end
 
   def index

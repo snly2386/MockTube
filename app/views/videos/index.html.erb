@@ -3,6 +3,6 @@
 <ul>
   <%@videos.each do |video| %>
   <%=image_tag(video.thumbnail)%>
-  <li><%=link_to(video.title, "videos/#{video.id}") %></li>
+  <li><%=link_to(video.title, "/users/#{@user.id}/videos/#{video.id}") %></li>
   <% end %>
 </ul>

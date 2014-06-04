@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def create
-    @user = User.create(name: params[:username], name: params[:name], email: params[:email], password: params[:password])
+    @user = User.create(username: params[:username], name: params[:name], email: params[:email], password: params[:password])
     redirect_to "/users/#{@user.id}"
   end
 

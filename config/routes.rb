@@ -8,12 +8,15 @@ Rails.application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   root 'landings#new'
-  get  'videos/search' => "videos#search"
+  get  'users/:id/videos/search' => "videos#search"
 
   resources :users, except:[:destroy, :index, :update, :edit] do
-    resources :videos, except:[:update, :edit]
+    resources :videos, except:[:update, :edit] do 
+      resources :comments, only:[:create]
+    end
   end
-      resources :videos, only:[:index, :show]
+  resources :videos, only:[:index, :show] 
+  
   post 'users/signin' => "users#sign_in"
   post 'videos/results'=> "videos#results"
 

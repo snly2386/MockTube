@@ -1,5 +1,14 @@
 <h1>Welcome to your profile page <%=@user.name%></h1>
 
+<h2> SEARCH FOR A VIDEO </h2>
+<div>
+    <%= form_tag "/users/#{@user.id}/videos/search", :method => "get" do %>
+      <div> <%=label_tag :search, nil %> </div>
+      <div><%=text_field_tag :search %></div>
+      <div><%=submit_tag "Search", :name => nil %></div>
+      <%end%>
+</div>
+
 <h2> CREATE A VIDEO!! </h2>
 
 
