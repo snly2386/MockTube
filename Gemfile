@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 group :development do
   gem "better_errors"
 end
-gem 'twitter-bootstrap-rails', '~> 2.2.8'
 
 gem 'acts_as_votable', '~> 0.9.0'
 gem 'unirest'
