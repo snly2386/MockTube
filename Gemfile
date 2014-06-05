@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-gem "activerecord-reputation-system"
 group :development do
   gem "better_errors"
 end
-gem "protected_attributes"
+gem 'unirest'
+gem 'riot_api'
 gem "binding_of_caller"
 gem 'hirb'
 gem 'pry-debugger'

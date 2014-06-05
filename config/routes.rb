@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get  'users/:id/videos/search' => "videos#search"
 
   resources :users, except:[:destroy, :index, :update, :edit] do
-    resources :videos, except:[:update, :edit] do 
+    resources :videos, except:[:update, :edit] do
       resources :comments, only:[:create]
     end
   end
