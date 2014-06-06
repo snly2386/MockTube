@@ -59,12 +59,14 @@
 <div class="container">
   <div class="col-sm-10 col-sm-offset-1">
     <div class="page-header text-center">
-      <h1 class="howdoesit">How does it work?</h1>
+      <h1 class="howdoesit">My Videos</h1>
     </div>
-    
-    <p class="lead text-center"> 
-      MeTube is a simple app that allows you to upload youtube videos to create your own personal playlist.
-    </p> 
+       <%@videos.each do |video| %>
+          
+          <%=link_to(image_tag(video.thumbnail), "/users/#{@user.id}/videos/#{video.id}")%>
+          <%=link_to(video.title, "/users/#{@user.id}/videos/#{video.id}") %>
+       <% end %>
+           
     
     <hr>
     
@@ -83,21 +85,13 @@
    
 <div class="row">
     <div class="col-sm-10 col-sm-offset-1">
-      <h1 class="howdoesit">Sign in</h1>
+      <h1 class="howdoesit">Search for a Video</h1>
       
-      <div>
-        <%= form_tag 'users/signin', :method => "post" do %>
-        <%=label_tag :username, nil %>
-        <%=text_field_tag :password %>
-
-        <%=label_tag :password, nil %>
-        <%=password_field_tag :password %>
-
-        <%=submit_tag "SIGN IN" %>
+        <%= form_tag "/users/#{params[:user_id]}/videos/search", :method => "get" do %>
+        
+        <div class ""><%=text_field_tag :search, nil, class: "" %></div>
+        <div class=""><%=submit_tag "Search", :name => nil, class: "" %></div>
         <%end%>
-      </div>
-      
-      Don't have an account? Sign up below!
       
       <div class="divider"></div>
       
@@ -107,24 +101,10 @@
 <div class="divider"></div>
   
 <section class="bg-3">
-  <div class="col-sm-6 col-sm-offset-3 text-center"><h1 style="padding:20px;background-color:rgba(5,5,5,.8)" class="howdoesit">Sign Up</h2>
+  <a href="#section1"<div class="col-sm-6 col-sm-offset-3 text-center"><h1 style="padding:20px;background-color:rgba(5,5,5,.8)" class="howdoesit">Back to Videos</h1>
     
-      <%= form_tag '/users', :method => "post"  do%>
-      <div class="signup">
-        <%=label_tag :username, nil %>
-        <%=text_field_tag :username%> <br>
-
-        <%= label_tag :name, nil %>
-        <%= text_field_tag :name, nil, class: "namefield" %> <br>
-
-        <%= label_tag :email, nil %>
-        <%= text_field_tag :email, nil, class: "emailfield" %> <br>
-
-        <%= label_tag :password, nil %> 
-        <%= password_field_tag :password,nil, class: "passfield" %> <br>
-        <%= submit_tag "Create my account", class: "create" %>
-      <%end%>
-    </div>
+     
+    </div></a>
 
   </div>
 </section>
@@ -193,12 +173,3 @@
 
 
 
-
-<h1> <%=@user.name%>'s VIDEOS </h1>
-
-<ul>
-  <%@videos.each do |video| %>
-  <%=image_tag(video.thumbnail)%>
-  <li><%=link_to(video.title, "/users/#{@user.id}/videos/#{video.id}") %></li>
-  <% end %>
-</ul>
