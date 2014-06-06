@@ -22,7 +22,7 @@ Add Video
 
 Video Play
 =======
-![alt text](https://github.com/snly2386/MockTube/blob/master/app/assets/images/video.png)
+![alt text](https://raw.githubusercontent.com/snly2386/MockTube/master/app/assets/images/video.png)
 
 Search Video
 =======
