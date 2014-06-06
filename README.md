@@ -18,7 +18,7 @@ My Videos
 
 Add Video
 =======
-![alt text](https://raw.githubusercontent.com/snly2386/MockTube/master/app/assets/images/myvideos.png)
+![alt text](https://raw.githubusercontent.com/snly2386/MockTube/master/app/assets/images/video.png)
 
 Video Play
 =======
