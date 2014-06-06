@@ -10,7 +10,11 @@ class CommentsController < ApplicationController
 
     respond_to do |format| 
       format.html {redirect_to "/users/#{@user.id}/videos/#{@video.id}", flash: {success_comment: "Comment Successfully Created"}}
-      format.js {}
+      format.js {render :layout => false}
+      format.js do
+        # render :layout => false
+        render :json => { :foo => :bar }
+      end
     end
   end
 end

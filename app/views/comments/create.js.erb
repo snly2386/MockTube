@@ -1,6 +1,6 @@
 (function () {
-  var commentHtml = "<%= j render('comments/show', :comment => @comment) %>";
+  var commentHtml = "<%= j render('comments/show', :c => @comment) %>";
   $('.comments').append(commentHtml);
-  console.log("FUCK")
+  console.log("its working!")
 })();
-// $('.commentinput').val('')
+

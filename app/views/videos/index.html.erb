@@ -1,3 +1,199 @@
+<div id="wrap">
+
+ 
+<header class="masthead">
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+      <!-- Indicators -->
+     
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="http://www.hdwallpapers.in/walls/watchmen_movie_scene-HD.jpg">
+          <div class="container">
+            <div class="carousel-caption">
+              <h2></h2>
+              <p></p>
+            </div>
+          </div>
+        </div>
+           
+      </div><!-- /.carousel-inner -->
+      <div class="logo" style="color:white"><%=@user.name%>'s Videos</div> 
+      <!-- Controls -->
+      
+    </div>
+    <!-- /.carousel -->
+  
+</header>
+  
+  
+<!-- Fixed navbar -->
+<div class="navbar navbar-custom navbar-inverse navbar-static-top" id="nav">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav nav-justified">
+          <li><a href="/">Home</a></li>
+          <li><a href="/users/<%=params[:id]%>">Profile</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Placeholder <b class="caret"></b></a>
+          </li>
+          <li><a href="#section4">Location</a></li>
+          <li><a href="#section5">Contact</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div><!--/.container -->
+</div><!--/.navbar -->
+  
+<!-- Begin page content -->
+<div class="divider" id="section1"></div>
+  
+<div class="container">
+  <div class="col-sm-10 col-sm-offset-1">
+    <div class="page-header text-center">
+      <h1 class="howdoesit">How does it work?</h1>
+    </div>
+    
+    <p class="lead text-center"> 
+      MeTube is a simple app that allows you to upload youtube videos to create your own personal playlist.
+    </p> 
+    
+    <hr>
+    
+    <div class="divider"></div>
+    
+  </div>
+</div>
+    
+<div class="divider"></div>
+  
+<section class="bg-1">
+  <div class="col-sm-6 col-sm-offset-3 text-center"></div>
+</section>
+  
+<div class="divider" id="section2"></div>
+   
+<div class="row">
+    <div class="col-sm-10 col-sm-offset-1">
+      <h1 class="howdoesit">Sign in</h1>
+      
+      <div>
+        <%= form_tag 'users/signin', :method => "post" do %>
+        <%=label_tag :username, nil %>
+        <%=text_field_tag :password %>
+
+        <%=label_tag :password, nil %>
+        <%=password_field_tag :password %>
+
+        <%=submit_tag "SIGN IN" %>
+        <%end%>
+      </div>
+      
+      Don't have an account? Sign up below!
+      
+      <div class="divider"></div>
+      
+    </div><!--/col-->
+</div><!--/container-->
+
+<div class="divider"></div>
+  
+<section class="bg-3">
+  <div class="col-sm-6 col-sm-offset-3 text-center"><h1 style="padding:20px;background-color:rgba(5,5,5,.8)" class="howdoesit">Sign Up</h2>
+    
+      <%= form_tag '/users', :method => "post"  do%>
+      <div class="signup">
+        <%=label_tag :username, nil %>
+        <%=text_field_tag :username%> <br>
+
+        <%= label_tag :name, nil %>
+        <%= text_field_tag :name, nil, class: "namefield" %> <br>
+
+        <%= label_tag :email, nil %>
+        <%= text_field_tag :email, nil, class: "emailfield" %> <br>
+
+        <%= label_tag :password, nil %> 
+        <%= password_field_tag :password,nil, class: "passfield" %> <br>
+        <%= submit_tag "Create my account", class: "create" %>
+      <%end%>
+    </div>
+
+  </div>
+</section>
+  
+
+
+<div id="footer">
+  <div class="container">
+    <p class="text-muted">MeTube</p>
+  </div>
+</div>
+
+<ul class="nav pull-right scroll-top">
+ 
+</ul>
+
+
+<div class="modal" id="myModal" role="dialog">
+  <div class="modal-dialog">
+  <div class="modal-content">
+  <div class="modal-header">
+    <button class="close" type="button" data-dismiss="modal">×</button>
+    <h3 class="modal-title"></h3>
+  </div>
+  <div class="modal-body">
+    <div id="modalCarousel" class="carousel">
+ 
+          <div class="carousel-inner">
+           
+          </div>
+          
+          <a class="carousel-control left" href="#modaCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+          <a class="carousel-control right" href="#modalCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+          
+        </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-default" data-dismiss="modal">Close</button>
+  </div>
+   </div>
+  </div>
+</div>
+
+
+  <!-- script references -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    
+    <script>
+    <%= render "landings/jstuff/bootstrap.min.js" %>
+    <%= render "landings/jstuff/script.js"%>
+    </script>
+
+ 
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <h1> <%=@user.name%>'s VIDEOS </h1>
 
 <ul>
