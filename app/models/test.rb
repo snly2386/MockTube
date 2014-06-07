@@ -10,8 +10,15 @@
 
 require 'unirest'
 
-def make_request
+def rank_stats
 @response = Unirest::get "https://teemojson.p.mashape.com/player/na/ballsakitysak/ranked_stats/season/4", 
+  headers: { 
+    "X-Mashape-Authorization" => "XMxE0oKP0YqjU4fVpZIC4t2kaDUrhoAx"
+  }
+end
+
+def champion_stats
+  @response_champ = Unirest::get "https://teemojson.p.mashape.com/datadragon/champion", 
   headers: { 
     "X-Mashape-Authorization" => "XMxE0oKP0YqjU4fVpZIC4t2kaDUrhoAx"
   }
