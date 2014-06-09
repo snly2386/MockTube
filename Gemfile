@@ -7,7 +7,7 @@ end
 gem 'ruby-lol'
 gem 'acts_as_votable', '~> 0.9.0'
 gem 'unirest'
-gem 'riot_api'
+
 gem "binding_of_caller"
 gem 'hirb'
 gem 'pry-debugger'
