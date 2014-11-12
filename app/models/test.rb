@@ -24,3 +24,10 @@ def champion_stats
   }
 end
 
+def ranked_league
+@response_ranked = Unirest::get "https://teemojson.p.mashape.com/player/na/dyrus/leagues", 
+  headers: { 
+    "X-Mashape-Authorization" => "XMxE0oKP0YqjU4fVpZIC4t2kaDUrhoAx"
+  }
+end
+
